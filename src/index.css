@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-hacker-green: #00ff41;
+  --color-hacker-dim: #006400;
+  --color-hacker-bg: #0f141a;
+  --color-conspiracy-red: #ff5f5f;
+}
+
+@layer base {
+  body {
+    @apply bg-hacker-bg text-gray-100 font-sans;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(0, 100, 0, 0.08) 0%, transparent 100%),
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 100%, 100% 4px, 3px 100%;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .glitch-text {
+    text-shadow: 2px 0 rgba(255, 0, 0, 0.5), -2px 0 rgba(0, 0, 255, 0.5);
+  }
+  
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 150;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.05;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 8s linear infinite;
+  }
+
+  .redacted {
+    @apply bg-black text-black select-none;
+  }
+
+  .crt-flicker {
+    animation: flicker 0.15s infinite;
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.01; }
+  5% { opacity: 0.02; }
+  10% { opacity: 0.01; }
+  15% { opacity: 0.03; }
+  25% { opacity: 0.01; }
+  30% { opacity: 0.04; }
+  100% { opacity: 0.01; }
+}
+

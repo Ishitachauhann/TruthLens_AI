@@ -1,0 +1,12 @@
+{
+  "name": "TruthLens_AI",
+  "description": "Transform ordinary photos into absurd cinematic conspiracy theories with fake evidence and investigative threads.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI Image Analysis",
+    "Creative Writing",
+    "Generative Storytelling"
+  ]
+}
