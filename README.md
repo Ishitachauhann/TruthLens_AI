@@ -41,7 +41,7 @@ graph TD
     ReactApp -->|Render| Results[Investigation Results]
 ```
 
-## How to Fork & Contribute
+## How to use 
 
 1. **Clone the repository**:
    ```bash
